@@ -3003,3 +3003,41 @@ object-fit:cover;
 }
 
 }
+@media(max-width:768px){
+
+.hero{
+    overflow:hidden;
+}
+
+.scene{
+    height:380px;
+    width:100%;
+}
+
+.person{
+    height:65%;
+    left:28%;
+}
+
+.phone{
+    width:90px;
+    left:5%;
+    bottom:100px;
+}
+
+.laptop{
+    width:220px;
+    right:-20px;
+    bottom:100px;
+}
+
+.hero-title{
+    font-size:38px;
+    letter-spacing:-2px;
+}
+
+.hero p{
+    font-size:14px;
+}
+
+}

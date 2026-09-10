@@ -349,10 +349,10 @@ scrub:1
 x:-300,
 
 
-rotationY:180,
+rotationY:30,
 
 
-rotationZ:-20
+rotationZ:-5
 
 
 
@@ -771,3 +771,12 @@ ease:"power4.out"
 
 
 });
+if(window.innerWidth > 768){
+
+window.addEventListener("mousemove",(e)=>{
+
+// kode mouse interaction Anda
+
+});
+
+}
