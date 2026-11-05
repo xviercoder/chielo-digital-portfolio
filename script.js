@@ -1,782 +1,129 @@
-/* ==========================================
- CHIELO AGRAPANA PORTFOLIO MOTION SYSTEM
- GSAP + 3D PARALLAX + SCROLL EXPERIENCE
-========================================== */
-
-
-gsap.registerPlugin(ScrollTrigger);
-
-
-
-/* ===============================
- HERO TEXT INTRO
-================================ */
-
-
-const hero = gsap.timeline();
-
-
-hero
-
-.from(".badge",{
-
-opacity:0,
-
-y:40,
-
-duration:1
-
-})
-
-
-.from(".hero-title .line",{
-
-opacity:0,
-
-y:100,
-
-rotateX:90,
-
-stagger:0.15,
-
-duration:1,
-
-ease:"power4.out"
-
-})
-
-
-.from(".hero p",{
-
-opacity:0,
-
-y:40,
-
-duration:.8
-
-})
-
-
-.from(".hero-buttons",{
-
-opacity:0,
-
-y:30,
-
-duration:.7
-
-});
-
-
-
-
-
-
-
-/* ===============================
- SCROLL REVEAL
-================================ */
-
-
-const revealElements =
-document.querySelectorAll(".reveal");
-
-
-
-revealElements.forEach((item)=>{
-
-
-gsap.to(item,{
-
-scrollTrigger:{
-
-
-trigger:item,
-
-start:"top 85%",
-
-
-toggleActions:
-
-"play none none reverse"
-
-
-},
-
-
-opacity:1,
-
-
-y:0,
-
-
-duration:1.2,
-
-
-ease:"power4.out"
-
-
-});
-
-
-});
-
-
-
-
-
-
-
-/* ===============================
- FLOATING DEVICE
-================================ */
-
-
-gsap.to(".phone",{
-
-
-y:-35,
-
-duration:3,
-
-repeat:-1,
-
-yoyo:true,
-
-ease:"sine.inOut"
-
-
-});
-
-
-
-
-gsap.to(".laptop",{
-
-
-y:-25,
-
-duration:4,
-
-repeat:-1,
-
-yoyo:true,
-
-ease:"sine.inOut"
-
-
-});
-
-
-
-
-gsap.to(".person",{
-
-
-y:-20,
-
-duration:3,
-
-repeat:-1,
-
-yoyo:true,
-
-ease:"sine.inOut"
-
-
-});
-
-
-
-
-
-
-
-
-
-/* ===============================
- 3D MOUSE INTERACTION
-================================ */
-
-
-const phone =
-document.querySelector(".phone");
-
-
-const laptop =
-document.querySelector(".laptop");
-
-
-const person =
-document.querySelector(".person");
-
-
-
-
-window.addEventListener(
-
-"mousemove",
-
-(e)=>{
-
-
-const mouseX =
-
-(e.clientX /
-window.innerWidth -
-0.5);
-
-
-
-const mouseY =
-
-(e.clientY /
-window.innerHeight -
-0.5);
-
-
-
-
-
-gsap.to(phone,{
-
-rotateY:
-mouseX * 45,
-
-
-rotateX:
-mouseY * -35,
-
-
-x:
-mouseX * 40,
-
-
-duration:1,
-
-
-ease:"power3.out"
-
-
-});
-
-
-
-
-
-
-
-gsap.to(laptop,{
-
-rotateY:
-mouseX * 35,
-
-
-rotateX:
-mouseY * -25,
-
-
-x:
-mouseX * 50,
-
-
-duration:1,
-
-
-ease:"power3.out"
-
-
-});
-
-
-
-
-
-
-
-gsap.to(person,{
-
-x:
-mouseX * 25,
-
-
-duration:1
-
-
-});
-
-
-
-}
-
-);
-
-
-
-
-
-
-
-
-
-/* ===============================
- SCROLL DEVICE STORY
-================================ */
-
-
-
-gsap.to(".phone",{
-
-
-scrollTrigger:{
-
-
-trigger:".about",
-
-
-start:"top bottom",
-
-
-end:"bottom top",
-
-
-scrub:1
-
-
-},
-
-
-x:-300,
-
-
-rotationY:30,
-
-
-rotationZ:-5
-
-
-
-});
-
-
-
-
-
-
-
-gsap.to(".laptop",{
-
-
-scrollTrigger:{
-
-
-trigger:".about",
-
-
-start:"top bottom",
-
-
-end:"bottom top",
-
-
-scrub:1
-
-
-},
-
-
-x:300,
-
-
-rotationY:-180,
-
-
-rotationZ:15
-
-
-
-});
-
-
-
-
-
-
-
-
-
-/* ===============================
- ORBIT ROTATION
-================================ */
-
-
-
-gsap.to(".orbit",{
-
-
-scrollTrigger:{
-
-
-trigger:".hero",
-
-
-start:"top top",
-
-
-end:"bottom top",
-
-
-scrub:true
-
-
-},
-
-
-rotation:360
-
-
-});
-
-
-
-
-
-
-
-
-/* ===============================
- BACKGROUND PARALLAX
-================================ */
-
-
-
-window.addEventListener(
-
-"scroll",
-
-()=>{
-
-
-let scroll =
-window.scrollY;
-
-
-
-
-gsap.to(".ambient-1",{
-
-
-y:
-scroll * .15,
-
-
-duration:.5
-
-
-});
-
-
-
-
-
-gsap.to(".ambient-2",{
-
-
-y:
--scroll * .12,
-
-
-duration:.5
-
-
-});
-
-
-
-}
-
-);
-
-
-
-
-
-
-
-
-
-/* ===============================
- CARD 3D TILT
-================================ */
-
-
-const cards =
-document.querySelectorAll(".card");
-
-
-
-cards.forEach(card=>{
-
-
-card.addEventListener(
-
-"mousemove",
-
-(e)=>{
-
-
-const rect =
-card.getBoundingClientRect();
-
-
-
-const x =
-e.clientX - rect.left;
-
-
-
-const y =
-e.clientY - rect.top;
-
-
-
-
-const rotateX =
-(y - rect.height/2)/15;
-
-
-
-const rotateY =
-(rect.width/2 - x)/15;
-
-
-
-
-
-gsap.to(card,{
-
-rotateX,
-
-rotateY,
-
-duration:.3,
-
-ease:"power2.out"
-
-
-});
-
-
-
-}
-
-);
-
-
-
-
-
-
-card.addEventListener(
-
-"mouseleave",
-
-()=>{
-
-
-gsap.to(card,{
-
-rotateX:0,
-
-rotateY:0,
-
-duration:.5
-
-
-});
-
-
-}
-
-
-);
-
-
-
-});
-
-
-
-
-
-
-
-
-
-/* ===============================
- SMOOTH NAVIGATION
-================================ */
-
-
-document.querySelectorAll(
-'a[href^="#"]'
-)
-.forEach(anchor=>{
-
-
-anchor.addEventListener(
-"click",
-
-function(e){
-
-
-e.preventDefault();
-
-
-
-document.querySelector(
-
-this.getAttribute("href")
-
-)
-
-.scrollIntoView({
-
-behavior:"smooth"
-
-});
-
-
-
-}
-
-);
-
-
-});
-
-
-
-
-
-
-
-
-
-/* ===============================
- REDUCE MOTION
-================================ */
-
-
-if(
-window.matchMedia(
-"(prefers-reduced-motion: reduce)"
-).matches
-){
-
-
-gsap.globalTimeline.timeScale(0);
-
-
-}
-// DIGITAL THINKING SEQUENTIAL ANIMATION
-
-
-gsap.utils.toArray(".thinking-step").forEach((step,index)=>{
-
-
-gsap.from(step,{
-
-
-scrollTrigger:{
-
-
-trigger:step,
-
-
-start:"top 80%"
-
-
-},
-
-
-opacity:0,
-
-
-y:80,
-
-
-duration:1,
-
-
-delay:index * 0.25,
-
-
-ease:"power4.out"
-
-
-});
-
-
-});
-// DIGITAL THINKING STEP BY STEP
-
-
-gsap.utils.toArray(".process-step")
-.forEach((step,index)=>{
-
-
-gsap.fromTo(step,
-
-{
-
-opacity:0,
-
-y:80
-
-},
-
-{
-
-
-scrollTrigger:{
-
-
-trigger:step,
-
-
-start:"top 75%",
-
-
-toggleActions:"play none none reverse"
-
-
-},
-
-
-opacity:1,
-
-y:0,
-
-duration:1,
-
-
-delay:index * 0.35,
-
-
-ease:"power4.out"
-
-
-});
-
-
-});
-if(window.innerWidth > 768){
-
-window.addEventListener("mousemove",(e)=>{
-
-// kode mouse interaction Anda
-
-});
-
-}
+(() => {
+  const root = document.documentElement;
+  root.classList.add('js');
+
+  const header = document.querySelector('.site-header');
+  const progress = document.querySelector('.scroll-progress span');
+  const menuToggle = document.querySelector('.menu-toggle');
+  const navLinks = document.querySelector('.nav-links');
+  const navAnchors = [...document.querySelectorAll('.nav-links a[href^="#"]')];
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let ticking = false;
+
+  const closeMenu = () => {
+    navLinks?.classList.remove('is-open');
+    menuToggle?.setAttribute('aria-expanded', 'false');
+    menuToggle?.setAttribute('aria-label', 'Open navigation menu');
+  };
+
+  menuToggle?.addEventListener('click', () => {
+    const open = navLinks?.classList.toggle('is-open') ?? false;
+    menuToggle.setAttribute('aria-expanded', String(open));
+    menuToggle.setAttribute('aria-label', open ? 'Close navigation menu' : 'Open navigation menu');
+  });
+
+  navLinks?.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMenu));
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') closeMenu();
+  });
+
+  const updateScrollUI = () => {
+    const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+    const progressValue = scrollable > 0 ? (window.scrollY / scrollable) * 100 : 0;
+    if (progress) progress.style.width = `${progressValue}%`;
+    header?.classList.toggle('is-scrolled', window.scrollY > 24);
+
+    const heroVisual = document.querySelector('.hero-visual');
+    if (heroVisual && !reduceMotion && window.innerWidth > 760) {
+      const offset = Math.min(window.scrollY * -0.045, 0);
+      heroVisual.style.setProperty('--parallax-y', `${offset.toFixed(1)}px`);
+    } else if (heroVisual) {
+      heroVisual.style.setProperty('--parallax-y', '0px');
+    }
+    ticking = false;
+  };
+
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      window.requestAnimationFrame(updateScrollUI);
+      ticking = true;
+    }
+  }, { passive: true });
+  window.addEventListener('resize', updateScrollUI, { passive: true });
+  updateScrollUI();
+
+  // Reveal content only when it enters the viewport; no scroll event animation loops.
+  const revealItems = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window && !reduceMotion) {
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.13, rootMargin: '0px 0px -42px 0px' });
+    revealItems.forEach((item) => revealObserver.observe(item));
+  } else {
+    revealItems.forEach((item) => item.classList.add('is-visible'));
+  }
+
+  // Keep the current section reflected in the navigation.
+  const sections = [...document.querySelectorAll('main section[id]')];
+  if ('IntersectionObserver' in window) {
+    const sectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        const current = `#${entry.target.id}`;
+        navAnchors.forEach((anchor) => {
+          const active = anchor.getAttribute('href') === current;
+          anchor.classList.toggle('is-active', active);
+          if (active) anchor.setAttribute('aria-current', 'location');
+          else anchor.removeAttribute('aria-current');
+        });
+      });
+    }, { rootMargin: '-35% 0px -55% 0px', threshold: 0 });
+    sections.forEach((section) => sectionObserver.observe(section));
+  }
+
+  // Project category filter.
+  const filterButtons = document.querySelectorAll('.filter-button');
+  const projectCards = document.querySelectorAll('.project-card');
+  filterButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      const filter = button.dataset.filter || 'all';
+      filterButtons.forEach((item) => {
+        const active = item === button;
+        item.classList.toggle('is-active', active);
+        item.setAttribute('aria-pressed', String(active));
+      });
+      projectCards.forEach((card) => {
+        card.hidden = filter !== 'all' && card.dataset.category !== filter;
+      });
+    });
+  });
+
+  // A restrained pointer response on the hero composition, disabled for touch/reduced motion.
+  const hero = document.querySelector('.hero');
+  const heroVisual = document.querySelector('.hero-visual');
+  if (hero && heroVisual && !reduceMotion && window.matchMedia('(pointer: fine)').matches) {
+    let pointerFrame = 0;
+    hero.addEventListener('pointermove', (event) => {
+      if (pointerFrame) cancelAnimationFrame(pointerFrame);
+      pointerFrame = requestAnimationFrame(() => {
+        const bounds = hero.getBoundingClientRect();
+        const x = ((event.clientX - bounds.left) / bounds.width - 0.5) * 5;
+        const y = ((event.clientY - bounds.top) / bounds.height - 0.5) * 4;
+        heroVisual.style.setProperty('--pointer-x', `${x.toFixed(2)}px`);
+        heroVisual.style.setProperty('--pointer-y', `${y.toFixed(2)}px`);
+      });
+    });
+    hero.addEventListener('pointerleave', () => {
+      heroVisual.style.setProperty('--pointer-x', '0px');
+      heroVisual.style.setProperty('--pointer-y', '0px');
+    });
+  }
+
+  const year = document.querySelector('#year');
+  if (year) year.textContent = String(new Date().getFullYear());
+})();
