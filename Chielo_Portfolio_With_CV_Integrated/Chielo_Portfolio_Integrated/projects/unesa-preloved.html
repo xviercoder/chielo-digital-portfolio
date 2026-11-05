@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>document.documentElement.classList.add("js");</script>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="UNESA Preloved case study — a static frontend prototype for a campus-focused preloved marketplace.">
+  <meta name="theme-color" content="#050b14">
+  <title>UNESA Preloved | Chielo Agrapana</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body class="project-page">
+  <div class="scroll-progress" aria-hidden="true"><span></span></div>
+  <header class="site-header" id="top"><nav class="nav container" aria-label="Main navigation"><a class="brand" href="../index.html">CHIELO<span>.</span></a><button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-links"><span></span><span></span><span></span></button><div class="nav-links" id="nav-links"><a href="../index.html#about">About</a><a href="../index.html#projects">Projects</a><a href="../index.html#skills">Skills</a><a class="nav-contact" href="../index.html#contact">Let's talk ↗</a></div></nav></header>
+  <main class="project-page-main container">
+    <div class="breadcrumb reveal"><a href="../index.html">Home</a> / <a href="../index.html#projects">Projects</a> / UNESA Preloved</div>
+    <section class="project-page-hero reveal">
+      <div>
+        <p class="section-kicker">02 / Web application · Frontend prototype</p>
+        <h1>UNESA <span>Preloved.</span></h1>
+        <p>A campus-focused preloved marketplace frontend concept for the Universitas Negeri Surabaya community. The interface explores how unused items can be listed and discovered by students.</p>
+        <div class="tag-list"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Responsive UI</span><span>Marketplace flow</span></div>
+        <div class="project-cta-row"><a class="button button-primary" href="unesa-preloved/demo/index.html" target="_blank" rel="noopener">Open landing page <span>↗</span></a><a class="button button-ghost" href="unesa-preloved/demo/marketplace.html" target="_blank" rel="noopener">Open marketplace <span>↗</span></a></div>
+      </div>
+      <div class="project-page-cover"><img src="../assets/unesa-preloved-cover.svg" alt="Illustrated cover for UNESA Preloved frontend prototype"></div>
+    </section>
+
+    <section class="project-page-section reveal">
+      <div class="section-index">OVERVIEW</div>
+      <div><h2>Project concept</h2><p>UNESA Preloved is a static frontend prototype for a preloved marketplace concept intended for UNESA students. Its design uses a navy, gold, and warm-cream visual direction. The landing page communicates a concept of turning unused items into value, while the marketplace interface supports product discovery through search and category filters.</p><div class="project-facts"><div class="project-fact"><strong>Project type</strong><span>Campus marketplace frontend concept</span></div><div class="project-fact"><strong>Technology</strong><span>HTML, CSS, JavaScript</span></div><div class="project-fact"><strong>Current status</strong><span>Static frontend prototype</span></div></div></div>
+    </section>
+
+    <section class="project-page-section reveal">
+      <div class="section-index">IMPLEMENTED</div>
+      <div><h2>What is included in the prototype</h2><ul><li>Landing page with product-to-value narrative and navigation.</li><li>Login/register interface with a demo front-end check for the <code>@mhs.unesa.ac.id</code> email domain.</li><li>Marketplace page with product cards, keyword search, and category filtering.</li><li>Product detail page.</li><li>Sell-item form with image preview and a live listing summary preview.</li><li>Separate cart, checkout, and profile HTML screens are included in the demo package.</li></ul><p>The login/register check is client-side only. The demo stores an email in sessionStorage and redirects to the marketplace; it does not authenticate a real user.</p></div>
+    </section>
+
+    <section class="project-page-section reveal">
+      <div class="section-index">LIMITATIONS</div>
+      <div><h2>What is not implemented yet</h2><div class="notice-box"><strong>Frontend prototype only — no production backend</strong><p>The supplied README describes Supabase Auth, Supabase database/RLS, and Cloudinary as planned production integration steps. These are not implemented in the supplied frontend package.</p></div><ul><li>No real account authentication or authorization.</li><li>No persistent product listing or transaction storage.</li><li>No live messaging, payment, or order processing backend.</li><li>The sell form displays a prototype alert instead of submitting to a backend.</li><li>Some controls such as favorites, chat, negotiation, sorting, and pagination are visual or not yet wired to a complete workflow.</li></ul><p>Product imagery in the supplied pages references remote Unsplash image URLs, so those images require an internet connection when the demo is opened.</p></div>
+    </section>
+
+    <section class="project-page-section reveal">
+      <div class="section-index">TRY THE DEMO</div>
+      <div><h2>Explore the prototype pages</h2><p>Open the actual static HTML pages included in the uploaded demo package. These links work when the portfolio folder is hosted as a static website or opened through a local web server.</p><div class="project-cta-row"><a class="button button-primary" href="unesa-preloved/demo/index.html" target="_blank" rel="noopener">Landing page ↗</a><a class="button button-ghost" href="unesa-preloved/demo/marketplace.html" target="_blank" rel="noopener">Marketplace ↗</a><a class="button button-ghost" href="unesa-preloved/demo/sell.html" target="_blank" rel="noopener">Sell item ↗</a><a class="button button-ghost" href="unesa-preloved/demo/login.html" target="_blank" rel="noopener">Login UI ↗</a></div></div>
+    </section>
+    <a class="back-home" href="../index.html#projects">← Back to selected projects</a>
+  </main>
+  <footer class="site-footer"><div class="container footer-inner"><a class="brand" href="../index.html">CHIELO<span>.</span></a><p>UNESA Preloved case study · Static frontend prototype.</p><a class="back-top" href="#top">Back to top ↑</a><span class="copyright">© 2026 Chielo Agrapana</span></div></footer>
+  <script src="../script.js"></script>
+</body>
+</html>

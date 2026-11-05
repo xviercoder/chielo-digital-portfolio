@@ -1,0 +1,26 @@
+CHIELO PORTFOLIO — UPDATE & PUBLISH
+
+1. Extract Chielo_Portfolio_With_CV_Integrated.zip.
+2. Open the folder: Chielo_Portfolio_Integrated.
+3. Open your GitHub repository:
+   https://github.com/xviercoder/chielo-digital-portfolio
+4. Back up the current repository contents before replacing/updating files.
+5. Upload the CONTENTS of Chielo_Portfolio_Integrated to the repository root:
+   index.html, style.css, script.js, README.md, assets/, projects/
+   Do not upload the outer folder as an extra nested folder.
+6. Commit the update to the main branch.
+7. Check Settings > Pages. Keep deployment set to main / root.
+8. Open the published site and test:
+   - Resume link in the top navigation
+   - Download CV button in the hero
+   - Download CV button in Contact
+   - CoffeeGuard case study
+   - UNESA Preloved case study and prototype
+9. The CV file is stored at:
+   assets/docs/Chielo_Agrapana_CV_English.pdf
+
+IMPORTANT:
+- This package includes the English CV with the original portrait.
+- It does not include CoffeeGuard proprietary backend source code.
+- UNESA Preloved is presented as a frontend prototype.
+- Confirm your public email and phone details before making the repository public.

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>document.documentElement.classList.add("js");</script>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CoffeeGuard project case study — a coffee-shop operations SaaS candidate for inventory, stock movements, waste, and operational management.">
+  <meta name="theme-color" content="#050b14">
+  <title>CoffeeGuard | Chielo Agrapana</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body class="project-page">
+  <div class="scroll-progress" aria-hidden="true"><span></span></div>
+  <header class="site-header" id="top"><nav class="nav container" aria-label="Main navigation"><a class="brand" href="../index.html">CHIELO<span>.</span></a><button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-links"><span></span><span></span><span></span></button><div class="nav-links" id="nav-links"><a href="../index.html#about">About</a><a href="../index.html#projects">Projects</a><a href="../index.html#skills">Skills</a><a class="nav-contact" href="../index.html#contact">Let's talk ↗</a></div></nav></header>
+  <main class="project-page-main container">
+    <div class="breadcrumb reveal"><a href="../index.html">Home</a> / <a href="../index.html#projects">Projects</a> / CoffeeGuard</div>
+    <section class="project-page-hero reveal">
+      <div>
+        <p class="section-kicker">01 / Business system · SaaS</p>
+        <h1>Coffee<span>Guard.</span></h1>
+        <p>A coffee-shop operations platform designed to help owners monitor inventory, stock movements, waste, sales, staff, and outlet activity in one workspace.</p>
+        <div class="tag-list"><span>Laravel 13</span><span>PHP 8.3+</span><span>MySQL 8</span><span>JavaScript</span><span>Node.js tests</span></div>
+        <div class="project-cta-row"><a class="button button-primary" href="#demo-preview">View UI preview <span>↘</span></a><a class="button button-ghost" href="https://github.com/xviercoder" target="_blank" rel="noopener">GitHub profile ↗</a></div>
+      </div>
+      <div class="project-page-cover"><img src="../assets/coffeeguard-card-preview.jpg" alt="CoffeeGuard dashboard screenshot from its standalone UI demo"></div>
+    </section>
+
+    <section class="project-page-section reveal">
+      <div class="section-index">OVERVIEW</div>
+      <div><h2>Problem & product direction</h2><p>CoffeeGuard is positioned as a SaaS web platform for coffee-shop operations. Its product direction focuses on inventory visibility, ingredient stock movement, waste reporting, and operational workflows. It is not positioned as a replacement for a complete point-of-sale system; external POS integration has not been verified.</p><div class="project-facts"><div class="project-fact"><strong>Product type</strong><span>Coffee-shop operations SaaS</span></div><div class="project-fact"><strong>Target users</strong><span>Coffee-shop owners and operational teams</span></div><div class="project-fact"><strong>Project version</strong><span>v1.3.3 staging candidate · package dated 3 Nov 2026</span></div></div></div>
+    </section>
+
+    <section class="project-page-section reveal">
+      <div class="section-index">FEATURES</div>
+      <div><h2>Modules represented in the source</h2><p>The supplied project package documents and includes the following modules:</p><ul><li>Authentication, user roles, company/workspace, and multi-outlet management.</li><li>Users, employees, categories, products, ingredients, suppliers, and consumption rules/recipes.</li><li>Inventory, stock movements, and waste reports with approval workflow.</li><li>Sales/internal transactions and attendance.</li><li>Dashboard, audit logs, subscriptions, plans, and payment administration.</li><li>Daily-close report preview. This is read-only and does not create a persistent close snapshot or lock a period.</li></ul></div>
+    </section>
+
+    <section class="project-page-section" id="demo-preview">
+      <div class="section-index">UI PREVIEW</div>
+      <div><h2>Standalone visual demo</h2><p>The screenshots below come from the project's separate interactive UI/UX demo. The demo uses fictitious browser-local data and localStorage. It is not connected to the Laravel API or a real database, and role selection in the demo is a visual preview rather than backend authorization.</p><div class="preview-gallery"><img src="../assets/coffeeguard-demo-desktop.png" alt="CoffeeGuard standalone UI demo desktop screenshot"><img src="../assets/coffeeguard-demo-mobile.png" alt="CoffeeGuard standalone UI demo mobile screenshot"></div></div>
+    </section>
+
+    <section class="project-page-section reveal">
+      <div class="section-index">VERIFICATION</div>
+      <div><h2>Documented validation snapshot</h2><p>According to the development handoff dated 3 November 2026, the package records these checks:</p><ul><li>Frontend Node tests: 9 passed, 0 failed.</li><li>JavaScript syntax and frontend publish checks: passed.</li><li>PHP syntax lint: 119 files passed; Laravel route registration: 98 routes loaded.</li><li>Backend static verification: passed.</li><li>Offline browser smoke: 42 mocked API requests passed. This did not use a live Laravel API or database.</li></ul><div class="notice-box"><strong>Release status: STAGING CANDIDATE — PRODUCTION NO-GO</strong><p>PHPUnit was blocked by missing runtime extensions and Composer. MySQL 8 integration/concurrency, live API UAT, backup/restore, deployment, and rollback rehearsals were not run in the supplied environment. Production readiness is therefore not verified.</p></div></div>
+    </section>
+
+    <section class="project-page-section reveal">
+      <div class="section-index">TECH & SCOPE</div>
+      <div><h2>Implementation notes</h2><p>The supplied handoff identifies Laravel 13 / PHP 8.3+ for the API, MySQL 8 as the target database, and a JavaScript frontend. The project package also contains tests, CI configuration, migrations, and staging documentation. No production deployment, production database, or real production credentials are included in the handoff.</p><p>The backend source package is marked proprietary. This public portfolio page therefore presents a case study and screenshots only; it does not publish the full CoffeeGuard application source.</p></div>
+    </section>
+    <a class="back-home" href="../index.html#projects">← Back to selected projects</a>
+  </main>
+  <footer class="site-footer"><div class="container footer-inner"><a class="brand" href="../index.html">CHIELO<span>.</span></a><p>CoffeeGuard case study · Project status is stated as documented.</p><a class="back-top" href="#top">Back to top ↑</a><span class="copyright">© 2026 Chielo Agrapana</span></div></footer>
+  <script src="../script.js"></script>
+</body>
+</html>
